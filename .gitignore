@@ -23,6 +23,6 @@ ip_upgrade.log
 NA/
 
 # IP editor project (generated, not source)
-ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.cache/
-ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.hw/
-ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.xpr
+vivado/ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.cache/
+vivado/ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.hw/
+vivado/ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.xpr
