@@ -1,5 +1,5 @@
 // ============================================================================
-// Module: tile_renderer (64x64 TILE, 32-SLOT VERSION)
+// Module: tile_renderer (64x64 TILES)
 // ============================================================================
 // 64x64 pixel tiles with 5-bit tile index (up to 32 unique tiles).
 //
@@ -31,21 +31,21 @@ module tile_renderer (
     output reg         pixel_valid
 );
 
-    // ?? World-space coordinates (screen + camera offset) ??
+    // World-space coordinates (screen + camera offset)
     wire [10:0] world_x = h_count + cam_x;
     wire [9:0]  world_y = v_count + cam_y;
 
-    // ?? Tile grid position ??
+    // Tile grid position
     // For 64x64 tiles: divide by 64 = shift right by 6
     wire [4:0]  tile_col = world_x[10:6];  // 0-19 (20 columns)
     wire [3:0]  tile_row = world_y[9:6];   // 0-14 (15 rows)
 
-    // ?? Pixel offset within the tile ??
+    // Pixel offset within the tile
     // For 64x64 tiles: lower 6 bits
     wire [5:0]  px = world_x[5:0];         // 0-63
     wire [5:0]  py = world_y[5:0];         // 0-63
 
-    // ?? Tilemap BRAM ??
+    // Tilemap BRAM
     // 20 columns x 15 rows = 300 entries
     // Each entry is a 5-bit tile index (0-31)
     wire [8:0] tilemap_addr = tile_row * 20 + tile_col;
@@ -68,7 +68,7 @@ module tile_renderer (
         active_d1 <= active;
     end
 
-    // ?? Tileset BRAM ??
+    // Tileset BRAM
     // 32 tiles x 64x64 pixels = 131072 entries
     // Address: {tile_index[4:0], py[5:0], px[5:0]} = 17 bits
     wire [16:0] tileset_addr = {tile_index, py_d1, px_d1};
@@ -88,7 +88,7 @@ module tile_renderer (
         active_d2 <= active_d1;
     end
 
-    // ?? Output ??
+    // Output
     always @(*) begin
         if (active_d2) begin
             pixel_rgb565 = tile_color;
@@ -99,7 +99,7 @@ module tile_renderer (
         end
     end
 
-    // ?? Load hex data ??
+    // Load hex data
     // UPDATE THESE PATHS to match your project directory
     initial begin
         $readmemh("C:/Users/yilka/programming/infoproc/InfoProcTopLevel/tilemap.hex", tilemap_bram);
