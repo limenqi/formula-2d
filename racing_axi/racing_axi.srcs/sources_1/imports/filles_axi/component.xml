@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>racing_renderer</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_AWADDR</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_AWPROT</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_AWVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_AWREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_WDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_WSTRB</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_WVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_WREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_BRESP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_BVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_BREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ARADDR</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ARPROT</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ARVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ARREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_RDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_RRESP</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_RVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_RREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S_AXI_ARESETN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ARESETN</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S_AXI_ACLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>S_AXI_ACLK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_BUSIF">S_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_ACLK.ASSOCIATED_RESET">S_AXI_ARESETN</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>tmds_clk_n</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tmds_clk_n</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>tmds_clk_p</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tmds_clk_p</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>reg0</spirit:name>
+        <spirit:baseAddress spirit:format="bitString" spirit:resolve="user" spirit:bitStringLength="32">0</spirit:baseAddress>
+        <spirit:range spirit:format="long" spirit:resolve="dependent" spirit:dependency="pow(2,(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1) + 1)" spirit:minimum="4096" spirit:rangeType="long">4096</spirit:range>
+        <spirit:width spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH&apos;)) - 1) + 1">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>racing_renderer_axi</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>cbdb1519</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>racing_renderer_axi</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>cbdb1519</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>05b8bb7b</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>S_AXI_ACLK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_ARESETN</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_AWADDR</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_AWPROT</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_AWVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_AWREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_WDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_WSTRB</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_WVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_WREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_BRESP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_BVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_BREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_ARADDR</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_ARPROT</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_ARVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_ARREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_RDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_RRESP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_RVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S_AXI_RREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>clk_125mhz</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tmds_data_p</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tmds_data_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tmds_clk_p</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tmds_clk_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S Axi Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_DATA_WIDTH">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S Axi Addr Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH">7</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>axi_registers.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>clock_gen.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdmi_out.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sprite_overlay.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>tile_renderer.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>tmds_encoder.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>vga_timing.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>racing_renderer_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_22e84ead</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>axi_registers.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>clock_gen.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdmi_out.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sprite_overlay.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>tile_renderer.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>tmds_encoder.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>vga_timing.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>racing_renderer_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/racing_renderer_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_05b8bb7b</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>racing_renderer_axi_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S Axi Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_DATA_WIDTH">32</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S Axi Addr Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ADDR_WIDTH">7</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">racing_renderer_axi_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>racing_renderer_axi_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>20</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-03-18T16:11:31Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43427ccf_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b98d679_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@530849d0_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6285c435_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33d53882_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ea2410c_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42d094f0_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c9074e_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21e3b86e_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5783ee2f_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b00d20f_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32d9a69b_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dea3b0b_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d65dcb4_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@664a8f1b_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f79a14d_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1973adf6_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40860882_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34abcb7b_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36563fe8_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18d3f7da_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33cd4596_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ec8d343_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@427ecd00_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@393369e0_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ed8716c_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fbd4008_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d6fdf34_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11de60f4_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d17cc43_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@262058b3_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@102aa407_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b48f708_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@487565b7_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d0f4ef0_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de363f3_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c44118_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c05d33b_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c508e6d_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47e1f420_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7319a3f0_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37e5c0a2_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@404b075f_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5006ca5e_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d54d514_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e8c967f_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10fb6fe6_ARCHIVE_LOCATION">c:/users/yilka/desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d48805e_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38aa2f5d_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1937d3ba_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e0147d4_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13711c6b_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@348e2a62_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55115887_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32a7ed12_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49acc6_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@634e20c0_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e6699d_ARCHIVE_LOCATION">c:/Users/yilka/Desktop/infoproc_project/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@270f1b6a_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d645ffe_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46becc16_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7caa1f88_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35d5f209_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@964d90e_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e15bfc6_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71c7dd05_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b860095_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66a85dbb_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59cdff7a_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a1a864e_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68142f03_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a291429_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c869303_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64431813_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e1bce80_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60ca22ba_ARCHIVE_LOCATION">c:/Users/limez/Documents/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad0844f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6089987c_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52914737_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7314fadf_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@296df44c_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34976a27_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a5ac4ce_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f012f6_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705e24a0_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b3efa81_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@355626ed_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@771a851b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bf267ca_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c892e6b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ce3adc8_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dbdad50_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c930a8_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d75cfbb_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@667102d5_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c981edd_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62dd2e6f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dca8ba4_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@790c212e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74d780f5_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24684cd1_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@113cec8a_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c560b23_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fe05e09_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4278f79c_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63d61da4_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@145f2fc3_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10aff78d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bd8b5d7_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f648252_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a56583a_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e7ad89e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69abc356_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e2ce337_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4104a34f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d9495d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e51ece_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b548632_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f364fad_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33637d57_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dab86f4_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c097890_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@624c4c7b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7305ac3d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48573b89_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@486f45d2_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46f6b734_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1667c884_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b3b982e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a662562_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d57e6a9_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3257f417_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8f83cd_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dd96874_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10e2795_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d4984b5_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20004cdf_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d39b6ce_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4062b484_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379db730_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6158d53f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76dbe2fe_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62780482_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25792b7d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57fcadaf_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b1262ea_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c3aeb2e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41afedf6_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4227ebb1_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6337be8f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a45ec43_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@405e3f73_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8a6ffa1_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49e3d662_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c499e23_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e2b9fea_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14874a56_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21bc14a7_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a2ad731_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61dc5ef2_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f8fbbf8_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4c950c_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@784f3a17_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@510949f5_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b4d16d1_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6681656_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c2afbb2_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e04b401_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fd7127e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5665fa02_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a9a8733_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a669f00_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53009246_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57c1b869_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e2619a7_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a53816b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7655fb83_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3226cc4d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20aa505e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cb6bf47_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15b70aab_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c3c5251_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ab1ca1_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8791c85_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79a35963_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f770070_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@718d68fe_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3575cd74_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c94826_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27221b51_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bc75aca_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64286d14_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31b04e41_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@318fc03b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5277b8e3_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ddc310d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49236873_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27625295_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58bf4c2f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a8e75d7_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@723ecc69_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4397230_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e1b164b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c787605_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d009c6e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1745afde_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@218f479_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49cc36d4_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@218beb9b_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76e98bb9_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20255809_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bb4da27_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@222ada2d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e7f0390_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a2b9bae_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e4906a9_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13d0ef4f_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2030b0d7_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e0e6e80_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74a3b5b0_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@afac76e_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a983ff3_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e149807_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46d6c288_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dcc39fb_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67ceb19d_ARCHIVE_LOCATION">c:/Users/yilka/programming/infoproc/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a9e7460a"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871a59ce"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3ff6ee23"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="83ea9788"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="04aad2b8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="78293dd7"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

@@ -1,0 +1,28 @@
+# Vivado generated build artifacts
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.tmp/
+.Xil/
+
+# Vivado logs and junk
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
+vivado_pid*.str
+ip_upgrade.log
+
+# Generated zips
+*.zip
+
+# NA folder
+NA/
+
+# IP editor project (generated, not source)
+ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.cache/
+ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.hw/
+ip_repo/physics_axi_ip/edit_physics_axi_ip_v1_0.xpr
