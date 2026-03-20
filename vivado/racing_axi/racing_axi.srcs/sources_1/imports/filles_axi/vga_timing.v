@@ -1,7 +1,7 @@
 // ============================================================================
 // Module: vga_timing
 // ============================================================================
-// This module generates the timing signals for a 640x480 @ 60Hz display.
+// This module generates the timing signals for a 640x480 @ 60Hz display
 //
 // HOW IT WORKS:
 // Think of it like reading a book:
@@ -12,19 +12,7 @@
 //
 // The first 640 of each line are the visible pixels.
 // The first 480 lines are the visible lines.
-// Everything else is "blanking" - invisible timing the monitor needs.
-//
-// TIMING DIAGRAM (horizontal):
-//   |<--- 640 visible --->|<-16->|<-96->|<-48->|
-//   |    active pixels    |front | sync | back |
-//   |                     |porch |pulse |porch |
-//   |<-------------- 800 total ------------->|
-//
-// TIMING DIAGRAM (vertical):
-//   |<--- 480 visible --->|<-10->|<--2-->|<-33->|
-//   |    active lines     |front | sync  | back |
-//   |                     |porch | pulse |porch |
-//   |<-------------- 525 total ------------->|
+// Everything else is "blanking" invisible timing the monitor needs.
 //
 // OUTPUTS:
 //   h_count, v_count  = current pixel position (for tile lookup)
@@ -44,8 +32,7 @@ module vga_timing (
     output wire        active        // HIGH = visible pixel, LOW = blanking
 );
 
-    // ── Timing constants for 640x480 @ 60Hz ──
-    // These numbers are from the VESA standard - don't change them!
+    // Timing constants for 640x480 @ 60Hz
     
     // Horizontal timing (in pixels)
     localparam H_ACTIVE  = 640;  // visible pixels per line
@@ -61,7 +48,7 @@ module vga_timing (
     localparam V_BACK    = 33;   // back porch
     localparam V_TOTAL   = 525;  // total lines per frame (480+10+2+33)
 
-    // ── Horizontal counter ──
+    // Horizontal counter
     // Counts from 0 to 799, then wraps back to 0
     always @(posedge clk_25mhz) begin
         if (reset) begin
@@ -90,7 +77,7 @@ module vga_timing (
         end
     end
 
-    // ── Sync signals ──
+    // Sync signals
     // hsync and vsync are active LOW (the monitor expects this for 640x480)
     // They go LOW during the sync pulse region
     assign hsync = ~((h_count >= H_ACTIVE + H_FRONT) && 
@@ -99,7 +86,7 @@ module vga_timing (
     assign vsync = ~((v_count >= V_ACTIVE + V_FRONT) && 
                      (v_count <  V_ACTIVE + V_FRONT + V_SYNC));
 
-    // ── Active signal ──
+    // Active signal
     // HIGH only when we're in the visible 640x480 area
     assign active = (h_count < H_ACTIVE) && (v_count < V_ACTIVE);
 
