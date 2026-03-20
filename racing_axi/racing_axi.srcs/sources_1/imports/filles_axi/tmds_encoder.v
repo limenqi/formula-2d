@@ -5,14 +5,12 @@
 // HDMI/DVI requires this encoding for each of the 3 color channels.
 //
 // WHAT IS TMDS?
-//   Your monitor doesn't receive raw RGB values. Instead, each 8-bit color
+//   Our monitor doesn't receive raw RGB values. Instead, each 8-bit color
 //   gets encoded into 10 bits using a special algorithm that minimizes
 //   signal transitions (reduces interference on the cable).
 //   
 //   During blanking (non-visible pixels), special control codes are sent
 //   instead, which the monitor uses for synchronization.
-//
-// Based on DVI 1.0 specification, Section 3.3.1
 // ============================================================================
 
 module tmds_encoder (
