@@ -8,48 +8,48 @@ A hardware-accelerated 2D racing game implemented on a Zynq FPGA using Vivado.
 
 ```
 vivado/
-├── InfoProcTopLevel.xpr          # Vivado project file (open this in Vivado)
-├── top_design.bit                # Prebuilt bitstream (ready to flash)
-├── top_design.hwh                # Hardware handoff file (for Pynq/Jupyter)
-├── top_design.tcl                # TCL script to regenerate the block design
-├── InfoProcTopLevel.srcs/        # All HDL source files
-│   └── sources_1/                # Top-level and supporting RTL sources
-├── ip_repo/                      # Custom IP: Physics Engine (AXI)
-│   └── physics_axi_ip/
-│       └── physics_axi_ip_1.0/
-│           ├── hdl/              # RTL source for physics IP
-│           └── xgui/             # Vivado GUI config
-└── racing_axi/                   # Custom IP: Renderer (AXI)
-    ├── hdl/                      # RTL source for renderer IP
-    └── xgui/                     # Vivado GUI config
+├── InfoProcTopLevel.xpr                        # Vivado project file (open this in Vivado)
+├── top_design.bit                              # Prebuilt bitstream (ready to flash)
+├── top_design.hwh                              # Hardware handoff file (for Pynq/Jupyter)
+├── top_design.tcl                              # TCL script to regenerate the block design
+│
+├── InfoProcTopLevel.srcs/sources_1/bd/top_design/
+│   ├── top_design.bd                           # Block design
+│   ├── imports/hdl/top_design_wrapper.v        # Top-level HDL wrapper
+│   └── ip/                                     # IP instance configs (.xci)
+│
+├── ip_repo/physics_axi_ip/physics_axi_ip_1.0/ # Physics Engine custom IP
+│   ├── hdl/                                    # AXI wrapper (top-level + slave interface)
+│   ├── src/                                    # Physics RTL source files
+│   │   ├── physics_top.v
+│   │   ├── collision_response.v
+│   │   ├── heading_update.v
+│   │   ├── motion_update.v
+│   │   ├── speed_update.v
+│   │   ├── dir_lut.v
+│   │   ├── track_lookup.v
+│   │   └── *.mem                               # sin/cos/track lookup tables
+│   └── drivers/physics_axi_ip_v1_0/src/       # C driver (.h / .c)
+│
+└── racing_axi/racing_axi.srcs/sources_1/imports/filles_axi/   # Renderer custom IP
+    ├── racing_renderer_axi.v                   # Top-level AXI wrapper
+    ├── axi_registers.v
+    ├── tile_renderer.v
+    ├── sprite_overlay.v
+    ├── hdmi_out.v
+    ├── vga_timing.v
+    ├── tmds_encoder.v
+    ├── clock_gen.v
+    └── *.hex                                   # Tilemap, tileset, sprite graphics data
 ```
 
 ---
 
 ## Custom IPs
 
-| IP | Folder | Description |
-|----|--------|-------------|
-| Physics Engine | `vivado/ip_repo/physics_axi_ip/` | Handles car physics over AXI interface |
-| Renderer | `vivado/racing_axi/` | Renders the 2D racing scene over AXI interface |
+| IP | Location | Description |
+|----|----------|-------------|
+| Physics Engine | `vivado/ip_repo/physics_axi_ip/physics_axi_ip_1.0/` | AXI-connected IP handling car physics (motion, collision, heading) |
+| Renderer | `vivado/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi/` | AXI-connected IP rendering tiles, sprites and HDMI output |
 
 ---
-
-## How to Open the Project
-
-1. Open **Vivado**
-2. Click **Open Project** and select `vivado/InfoProcTopLevel.xpr`
-3. The custom IPs will be resolved automatically from `ip_repo/` and `racing_axi/`
-
-> To rebuild the block design from scratch, run `vivado/top_design.tcl` via **Tools → Run Tcl Script**
-
----
-
-## Flashing the Bitstream
-
-Use the prebuilt `top_design.bit` and `top_design.hwh` with Pynq:
-
-```python
-from pynq import Overlay
-ol = Overlay("top_design.bit")
-```
