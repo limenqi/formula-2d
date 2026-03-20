@@ -1,17 +1,13 @@
-// ============================================================================
-// Module: tmds_encoder
-// ============================================================================
 // Converts an 8-bit color value into a 10-bit TMDS encoded value.
 // HDMI/DVI requires this encoding for each of the 3 color channels.
-//
+
 // WHAT IS TMDS?
 //   Our monitor doesn't receive raw RGB values. Instead, each 8-bit color
 //   gets encoded into 10 bits using a special algorithm that minimizes
 //   signal transitions (reduces interference on the cable).
-//   
+
 //   During blanking (non-visible pixels), special control codes are sent
-//   instead, which the monitor uses for synchronization.
-// ============================================================================
+//   instead, which the monitor uses for synchronization
 
 module tmds_encoder (
     input  wire       clk,       // pixel clock (25 MHz)

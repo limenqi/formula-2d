@@ -1,11 +1,7 @@
-// ============================================================================
-// Module: racing_renderer_axi
-// ============================================================================
 // Split-screen renderer for 2-player racing.
 //   - Top half (lines 0-238): Player 1 viewport (cam1)
 //   - Divider (lines 239-240): white line
 //   - Bottom half (lines 241-479): Player 2 viewport (cam2)
-// ============================================================================
 
 module racing_renderer_axi #(
     parameter C_S_AXI_DATA_WIDTH = 32,

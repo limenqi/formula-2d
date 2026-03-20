@@ -1,19 +1,15 @@
-// ============================================================================
-// Module: hdmi_out
-// ============================================================================
 // Takes parallel RGB + sync signals and outputs TMDS differential signals
 // for the HDMI connector on the PYNQ-Z1.
-//
+
 // HOW HDMI OUTPUT WORKS:
 //   1. Our renderer produces 8-bit R, G, B + hsync + vsync at 25 MHz
 //   2. Three TMDS encoders convert each color to 10-bit encoded values
 //   3. OSERDES blocks serialize each 10-bit value at 125 MHz (5x pixel clock)
 //      sending 2 bits per 125 MHz clock (DDR) = 10 bits per pixel clock
 //   4. OBUFDS converts single-ended to differential for the HDMI cable
-//
-// The blue channel carries hsync/vsync during blanking.
-// Red and green channels carry 0,0 control bits during blanking.
-// ============================================================================
+
+// The blue channel carries hsync/vsync during blanking
+// Red and green channels carry 0,0 control bits during blanking
 
 module hdmi_out (
     input  wire       clk_25mhz,     // pixel clock
@@ -68,7 +64,7 @@ module hdmi_out (
         .dout  (tmds_blue)
     );
 
-    // ── Serialize 10-bit TMDS to differential output ──
+    // Serialize 10-bit TMDS to differential output
     // Using Xilinx OSERDESE2 (output serializer) in DDR mode
     // 5:1 serialization with DDR = 10 bits per pixel clock cycle
     
@@ -141,13 +137,8 @@ module hdmi_out (
 endmodule
 
 
-// ============================================================================
-// Module: tmds_serializer
-// ============================================================================
 // Serializes a 10-bit TMDS word using Xilinx OSERDESE2 primitive.
 // Runs at 5x pixel clock in DDR mode: 5 * 2 = 10 bits per pixel clock.
-// ============================================================================
-
 module tmds_serializer (
     input  wire       clk_fast,    // 125 MHz serial clock
     input  wire       clk_slow,    // 25 MHz pixel clock

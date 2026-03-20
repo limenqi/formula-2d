@@ -1,8 +1,5 @@
-// ============================================================================
-// Module: tile_renderer (64x64 TILES)
-// ============================================================================
 // 64x64 pixel tiles with 5-bit tile index (up to 32 unique tiles).
-//
+
 // SPECIFICATIONS:
 //   - Tile size:      64x64 pixels
 //   - Tile index:     5-bit (0-31, supports 32 unique tiles)
@@ -12,12 +9,6 @@
 //   - Tileset addr:   17-bit {tile_index[4:0], py[5:0], px[5:0]}
 //   - Pipeline:       2 cycles (tilemap read -> tileset read)
 //   - Pixel format:   RGB565 (16-bit)
-//
-// BRAM USAGE:
-//   Tilemap: 300 x 5-bit  = ~188 bytes   (negligible)
-//   Tileset: 131072 x 16-bit = 262,144 bytes = 256 KB
-//   Total:   ~256 KB (within 630 KB budget)
-// ============================================================================
 
 module tile_renderer (
     input  wire        clk,

@@ -1,25 +1,20 @@
-// ============================================================================
-// Module: vga_timing
-// ============================================================================
 // This module generates the timing signals for a 640x480 @ 60Hz display
-//
-// HOW IT WORKS:
-// Think of it like reading a book:
-//   - h_count goes left to right (0 to 799) for each line
-//   - When h_count reaches the end, it resets and v_count moves down one line
-//   - v_count goes top to bottom (0 to 524) for each frame
-//   - When v_count reaches the end, one full frame is done (happens 60x/sec)
-//
-// The first 640 of each line are the visible pixels.
-// The first 480 lines are the visible lines.
-// Everything else is "blanking" invisible timing the monitor needs.
-//
+
+// h_count goes left to right (0 to 799) for each line
+// When h_count reaches the end, it resets and v_count moves down one line
+// v_count goes top to bottom (0 to 524) for each frame
+// When v_count reaches the end, one full frame is done (happens 60x/sec)
+
+// The first 640 of each line are the visible pixels
+// The first 480 lines are the visible lines
+// Everything else is "blanking" invisible timing the monitor needs
+
 // OUTPUTS:
-//   h_count, v_count  = current pixel position (for tile lookup)
-//   hsync, vsync      = sync signals the monitor needs
-//   active             = HIGH when we're in the visible area (640x480)
-//                        When active=0, output black (don't draw anything)
-// ============================================================================
+// h_count, v_count  = current pixel position (for tile lookup)
+// hsync, vsync      = sync signals the monitor needs
+// active             = HIGH when we're in the visible area (640x480)
+// When active=0, output black (don't draw anything)
+
 
 module vga_timing (
     input  wire        clk_25mhz,   // 25.175 MHz pixel clock
@@ -61,7 +56,7 @@ module vga_timing (
         end
     end
 
-    // ── Vertical counter ──
+    // Vertical counter
     // Increments by 1 each time we finish a horizontal line
     always @(posedge clk_25mhz) begin
         if (reset) begin

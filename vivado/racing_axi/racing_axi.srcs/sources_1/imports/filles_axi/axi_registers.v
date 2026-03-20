@@ -1,8 +1,4 @@
-// ============================================================================
-// Module: axi_registers
-// ============================================================================
-// AXI4-Lite slave for split-screen racing renderer.
-//
+// AXI4-Lite slave for split-screen racing renderer
 // REGISTER MAP (each register is 32 bits wide):
 //   Offset 0x00: cam1_x       (bits [10:0])  camera 1 X position
 //   Offset 0x04: cam1_y       (bits [9:0])   camera 1 Y position
@@ -16,7 +12,6 @@
 //   Offset 0x24: cam2_y       (bits [9:0])   camera 2 Y position
 //   Offset 0x28: (reserved)
 //   Offset 0x2C: frame_count  (bits [31:0])  read-only 60fps counter
-// ============================================================================
 
 module axi_registers #(
     parameter C_S_AXI_DATA_WIDTH = 32,
