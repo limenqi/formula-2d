@@ -1,55 +1,126 @@
-# Formula-2D — FPGA Racing Game
+# Formula 2D
 
-A hardware-accelerated 2D racing game implemented on a Zynq FPGA using Vivado.
+Formula 2D is an FPGA-accelerated multiplayer 2D racing game built on a Zynq/PYNQ platform.
+
+The system combines:
+- hardware-accelerated game physics (custom AXI IP),
+- hardware-accelerated graphics rendering (custom AXI renderer, HDMI output),
+- UDP-based multiplayer synchronisation, and
+- AWS-backed leaderboard services.
 
 ---
 
 ## Repository Structure
 
-```
-vivado/
-├── InfoProcTopLevel.xpr                        # Vivado project file (open this in Vivado)
-├── top_design.bit                              # Prebuilt bitstream (ready to flash)
-├── top_design.hwh                              # Hardware handoff file (for Pynq/Jupyter)
-├── top_design.tcl                              # TCL script to regenerate the block design
+```text
+.
+├── client_side/
+│   ├── client/                 # Client entrypoints and loops
+│   ├── game/                   # Client config/models/physics abstraction
+│   └── net/                    # UDP + protocol encode/decode
 │
-├── InfoProcTopLevel.srcs/sources_1/bd/top_design/
-│   ├── top_design.bd                           # Block design
-│   ├── imports/hdl/top_design_wrapper.v        # Top-level HDL wrapper
-│   └── ip/                                     # IP instance configs (.xci)
+├── server_side/
+│   ├── server/                 # Server entrypoints, game loop, AWS calls
+│   ├── game/                   # Server engine, hardware interface, config
+│   ├── net/                    # UDP + protocol encode/decode
+│   └── software_render/        # Optional software render/debug utilities
 │
-├── ip_repo/physics_axi_ip/physics_axi_ip_1.0/ # Physics Engine custom IP
-│   ├── hdl/                                    # AXI wrapper (top-level + slave interface)
-│   ├── src/                                    # Physics RTL source files
-│   │   ├── physics_top.v
-│   │   ├── collision_response.v
-│   │   ├── heading_update.v
-│   │   ├── motion_update.v
-│   │   ├── speed_update.v
-│   │   ├── dir_lut.v
-│   │   ├── track_lookup.v
-│   │   └── *.mem                               # sin/cos/track lookup tables
-│   └── drivers/physics_axi_ip_v1_0/src/       # C driver (.h / .c)
-│
-└── racing_axi/racing_axi.srcs/sources_1/imports/filles_axi/   # Renderer custom IP
-    ├── racing_renderer_axi.v                   # Top-level AXI wrapper
-    ├── axi_registers.v
-    ├── tile_renderer.v
-    ├── sprite_overlay.v
-    ├── hdmi_out.v
-    ├── vga_timing.v
-    ├── tmds_encoder.v
-    ├── clock_gen.v
-    └── *.hex                                   # Tilemap, tileset, sprite graphics data
+└── vivado/
+    ├── top_design.bit          # FPGA bitstream
+    ├── top_design.hwh          # Hardware handoff
+    ├── ip_repo/physics_axi_ip/ # Physics IP source
+    └── racing_axi/...          # Renderer IP source/assets
 ```
 
 ---
 
-## Custom IPs
+## Prerequisites
 
-| IP | Location | Description |
-|----|----------|-------------|
-| Physics Engine | `vivado/ip_repo/physics_axi_ip/physics_axi_ip_1.0/` | AXI-connected IP handling car physics (motion, collision, heading) |
-| Renderer | `vivado/racing_axi/racing_axi.srcs/sources_1/imports/filles_axi/` | AXI-connected IP rendering tiles, sprites and HDMI output |
+### Software
+- Python 3.10+ recommended.
+
+Install Python dependencies:
+```bash
+pip install requests
+pip install pygame # for debugging
+```
+
+### Hardware/runtime
+For the hardware-accelerated server path:
+- PYNQ environment with `pynq` package available.
+- Bitstream and IP names must match `server_side/game/hw_interface.py`.
 
 ---
+
+## Configuration
+
+Before running, set network/runtime constants in:
+- `server_side/game/config.py`
+- `client_side/game/config.py`
+
+Ensure consistency for:
+- `SERVER_PORT`
+- `SERVER_TICK_HZ` and `CLIENT_SEND_HZ`
+- `SERVER_REQUIRED_PLAYERS`
+- `CLIENT_SERVER_IP` (must point to server host)
+
+Multiplayer IDs:
+- Set unique `CLIENT_PLAYER_ID` per client instance (e.g. `1`, `2`).
+
+---
+
+## How to Run on PYNQ
+### 1) Folder layout on each board
+```bash
+/home/xilinx/jupyter_notebooks/formula2d/
+├── server_side/
+├── client_side/
+└── vivado/
+    ├── top_design.bit
+    └── top_design.hwh
+```
+- On the server board, ensure `server_side/` exists and bitstream files are available.
+- On each client board, ensure `client_side/` exists.
+
+
+### 2) Start Server (authoritative node)
+
+From workspace root:
+```bash
+cd server_side
+python -m server.main
+```
+
+Expected output includes:
+- server bind (`server listening on 0.0.0.0:<port>`)
+- menu wait status
+- runtime `RX`/`TX`/`STATS` logs after clients join
+
+### 3) Start Client(s)
+
+From workspace root, for each client:
+```bash
+cd client_side
+python -m client.main
+```
+
+Client flow:
+- prompts for start input
+- sends registration packet
+- enters fixed-rate update loop
+- sends player packets and receives snapshots
+
+---
+
+## Runtime Overview
+
+1. Client sends UDP updates:  
+   `player_id, seq, x, y, vx, vy, heading`
+2. Server validates sequence freshness and updates authoritative state.
+3. Server broadcasts consolidated snapshots to clients.
+4. Server writes official camera/car/heading state via MMIO.
+5. FPGA renderer produces split-screen HDMI output.
+6. End-of-race results are pushed to AWS leaderboard API.
+
+---
+
