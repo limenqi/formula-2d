@@ -81,6 +81,7 @@ Multiplayer IDs:
 ```
 - On the server board, ensure `server_side/` exists and bitstream files are available.
 - On each client board, ensure `client_side/` exists.
+- Use a fresh new terminal for each separate game run so previous processes, environment state, or loaded overlays do not interfere with the next run.
 
 
 ### 2) Start Server (authoritative node)
@@ -123,4 +124,15 @@ Client flow:
 6. End-of-race results are pushed to AWS leaderboard API.
 
 ---
+
+## Optional Render Comparison
+
+From the project root on PYNQ:
+
+```bash
+python -m software_render.hdmi_map_demo
+python -m game.hardware_render_demo
+```
+
+Use these only if you want a quick software vs hardware rendering comparison.
 
